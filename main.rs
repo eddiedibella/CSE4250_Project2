@@ -1,29 +1,15 @@
-use std::collections::HashMap;
-use std::io::{self, BufRead};
+use std::collections::BTreeMap;
+use std::io:{self, BufRead};
 
-struct Program {
-    lines:Vec<(132, String)>,
-
+enum statement {
+    let(char, String),
+    Print(String),
+    Println(String),
+    if GoTo(String, usize),
 }
-fn firstProg() {
-    let stdin = io::stdin();
-    let mut lines:Vec<(132, String)> = stdin
-        .lock()
-        .lines()
-        .filter_map(|line| line.ok())
-        .filter_map(|line| {
-            let space_index = line.find(" ")?;
-            let label = line[..space_index].parse().ok()?;
-            Some((label, line[space_index + 1..].to_string()))
-        })
-        .collect()
-    lines.sort_by_key(|(label, _)| *label);
-    let program = Program {lines};
-    execute_program(program);
+
+fn parse_arithmatic_expr(expr: &str, vars: BTreeMap<char, i32>) -> i32 {
+
 
 }
 
-fn execute_program(program: Program) {
-
-
-}
