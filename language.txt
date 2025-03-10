@@ -1,0 +1,27 @@
+Language features used: 
+1. Cargo.toml : Rust's package manager and build system. We use it for easier dependency and package management. It also offers better project  organization as we are using multiple files to handle different parts of the problem. It also allows ease of running and debugging the code. 
+
+2. Some Rust libraries we utilize in our code include: 
+- collections::BtreeMap - this is a collections provided by Rust in its standard library. It implements the Btree which is able to keep a sorted order of key value pairs to allow us to keep the order of execution from the input as well as providing efficient insertion and searching for our program. 
+
+- collections::HashMap - we use HashMap data structure provided by the standard library of rust to be able to store and manage the variables, where each variable is associated with a char 'key' representing the variable name and an i32 (32 bit signed integer) 'value'. 
+
+- std::io - this rust library allows functionality for input and output, we also use BufRead which is a trait in the module that allows for buffered reading of data in order to read the data in one chunk.
+
+-std::fmt is a library that allows for formatting of output.
+
+- eprintln is a macro i rust that allowed us (mainly in debugging) to prin errors in the standard error stream instead of the standard output stream.
+
+3. #[derive(Debug, Clone)]  this is an attribute in rust that allows to automatically implement the Debug and Clone (debug allows for efficient debugging and clone allows for cloning to produce identical instances) which allows ease of debugging and duplication without the need for manual implementation of these traits. 
+
+4. Enums and structs - we use Enums and structs as specified by rust to be able to classify our different "variables" i.e. conditions, statements... in order to use them dynamically within the program. '
+
+5. Err result type in rust allows us to be able to dynamically return errors from functions. Also helps with debugging to know where the error occurs.
+
+
+
+
+
+Data Structures used: 
+HashMap 
+BTree 
